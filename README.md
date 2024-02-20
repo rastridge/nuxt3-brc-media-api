@@ -1,18 +1,50 @@
+# Media API for thebuffalorugby.club
+
+File uploads based on
+
+```
 https://www.bezkoder.com/node-js-express-file-upload/
-https://www.bezkoder.com/node-js-express-file-upload/
+```
 
-\_\_basedir =
+## Hosted at Dreamhost.com
 
-Edit
+```
+https://panel.dreamhost.com/
+```
 
-# npm install
+Websites/Manage Websites
+Domain name - media.buffalorugby.org
 
-# upload to media.buffalorugby.org using push-brc-org-nuxt-backend-to-media-brc-org
+Passenger wont function after March 31, 2024
 
-#
+```
+https://help.dreamhost.com/hc/en-us/articles/23628302213652-How-to-upgrade-to-a-VPS-and-use-a-Proxy-Server
+```
 
-# ssh to buffalorugby.org - ssh rastridge@vps30249.dreamhostps.com
+Initialize Passenger to run JS server
 
-# restart passenger - restartpassmediabrc
+```
+Websites / Manage Websites  / Additional settings / Web Options / Modify / Enable Passenger / Enable NodeJS
+```
 
-# breaks if I put local node version in .htaccess file ???
+media.buffalorugby.org must have .htaccess which includes
+''`
+PassengerFriendlyErrorPages on
+
+Upload server code to media.buffalorugby.org
+
+```
+rsync -av  --delete  --exclude ".well-known/acme-challenge" --exclude "combined.log" --exclude "error.log" --exclude "/logs" --exclude "/tmp"  --exclude "/public" --exclude ".htaccess" --exclude ".DS_Store" --exclude "_notes"  --exclude ".git"  --exclude ".vscode"   ~/Code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
+```
+
+Shell access to media.buffalorugby.org
+
+```
+ssh rastridge@vps30249.dreamhostps.com
+```
+
+Restart server
+
+```
+touch /home/rastridge/media.buffalorugby.org/tmp/restart.txt'
+```
