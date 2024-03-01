@@ -16,10 +16,15 @@ Websites/Manage Websites
 Domain name - media.buffalorugby.org
 
 Passenger wont function after March 31, 2024
-
+Instead
+Configure a Proxy Server
 ```
 https://help.dreamhost.com/hc/en-us/articles/23628302213652-How-to-upgrade-to-a-VPS-and-use-a-Proxy-Server
 ```
+```
+https://help.dreamhost.com/hc/en-us/articles/217955787-Proxy-Server
+```
+
 
 Initialize Passenger to run JS server
 

@@ -82,11 +82,6 @@ async function addNewsImage(file) {
 	}
 }
 async function addArchiveDoc(file) {
-	/* 	activityLog(
-		'uploads',
-		'IN addArchiveDoc file.filename = ',
-		path.join(MEDIA_SITE_URL, 'xoda/files/archives/', file.filename)
-	) */
 	return {
 		imageUrl: MEDIA_SITE_URL + 'xoda/files/archives/' + file.filename,
 	}
