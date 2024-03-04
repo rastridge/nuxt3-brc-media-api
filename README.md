@@ -6,35 +6,32 @@ File uploads based on
 https://www.bezkoder.com/node-js-express-file-upload/
 ```
 
-## Hosted at Dreamhost.com
+## Javascript server hosted at Dreamhost.com
+
+Domain name - media.buffalorugby.org
+Using Proxy Server
+
+## Preparation
 
 ```
 https://panel.dreamhost.com/
 ```
 
-Websites/Manage Websites
-Domain name - media.buffalorugby.org
+Start proxy server
 
-Passenger wont function after March 31, 2024
-Instead
-Configure a Proxy Server
-```
-https://help.dreamhost.com/hc/en-us/articles/23628302213652-How-to-upgrade-to-a-VPS-and-use-a-Proxy-Server
-```
-```
-https://help.dreamhost.com/hc/en-us/articles/217955787-Proxy-Server
-```
+More / Proxy
+Set url/to/proxy to 'api'
 
+Set web directory to 'public'
+Websites/Manage Websites / Manage / Additional setting / Paths
 
-Initialize Passenger to run JS server
+## Development Cycle
+
+Edit server code
 
 ```
-Websites / Manage Websites  / Additional settings / Web Options / Modify / Enable Passenger / Enable NodeJS
+cd /Users/rastridge/code/experiments-nuxt3/nuxt3-brc-media-api/ vscode nuxt3-brc-media-api
 ```
-
-media.buffalorugby.org must have .htaccess which includes
-''`
-PassengerFriendlyErrorPages on
 
 Upload server code to media.buffalorugby.org
 
@@ -42,14 +39,19 @@ Upload server code to media.buffalorugby.org
 rsync -av  --delete  --exclude ".well-known/acme-challenge" --exclude "combined.log" --exclude "error.log" --exclude "/logs" --exclude "/tmp"  --exclude "/public" --exclude ".htaccess" --exclude ".DS_Store" --exclude "_notes"  --exclude ".git"  --exclude ".vscode"   ~/Code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
 ```
 
+Restart server
 Shell access to media.buffalorugby.org
 
 ```
 ssh rastridge@vps30249.dreamhostps.com
 ```
 
-Restart server
+change to directory media.buffalorugby.org
 
 ```
-touch /home/rastridge/media.buffalorugby.org/tmp/restart.txt'
+cd /home/rastridge/media.buffalorugby.org
+```
+
+```
+pm2 restart ecosystem.config.js
 ```
