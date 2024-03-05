@@ -23,6 +23,7 @@ More / Proxy
 Set url/to/proxy to 'api'
 
 Set web directory to 'public'
+
 Websites/Manage Websites / Manage / Additional setting / Paths
 
 ## Development Cycle
@@ -33,13 +34,14 @@ Edit server code
 cd /Users/rastridge/code/experiments-nuxt3/nuxt3-brc-media-api/ vscode nuxt3-brc-media-api
 ```
 
-Upload server code to media.buffalorugby.org
+To Upload server code to media.buffalorugby.org
 
 ```
 rsync -av  --delete  --exclude ".well-known/acme-challenge" --exclude "combined.log" --exclude "error.log" --exclude "/logs" --exclude "/tmp"  --exclude "/public" --exclude ".htaccess" --exclude ".DS_Store" --exclude "_notes"  --exclude ".git"  --exclude ".vscode"   ~/Code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
 ```
 
-Restart server
+To Restart server
+
 Shell access to media.buffalorugby.org
 
 ```
