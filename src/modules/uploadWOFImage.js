@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
 	},
 	filename: function (req, file, cb) {
 		let timestamp = Date.now()
-		cb(null, timestamp + '-WOF-' + file.originalname)
+		cb(null, timestamp + '-WOF72x72-' + file.originalname)
 	},
 })
 

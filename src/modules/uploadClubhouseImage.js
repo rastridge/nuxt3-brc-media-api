@@ -2,7 +2,7 @@ const multer = require('multer')
 const SharpMulter = require('sharp-multer')
 const { CLUBHOUSE_PATH, IMAGE_PATH } = require('../../config.js')
 
-const storage = multer.diskStorage({
+/* const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, `${IMAGE_PATH}${CLUBHOUSE_PATH}`)
 	},
@@ -10,15 +10,15 @@ const storage = multer.diskStorage({
 		let timestamp = Date.now()
 		cb(null, timestamp + '-clubhouse-' + file.originalname)
 	},
-})
+}) */
 
-/* const storage = SharpMulter({
+const storage = SharpMulter({
 	destination: (req, file, callback) =>
 		callback(null, `${IMAGE_PATH}${CLUBHOUSE_PATH}`),
 	imageOptions: {
 		fileFormat: 'png',
 		quality: 80,
-		resize: { width: 480, height: 480, resizeMode: 'cover' },
+		resize: { width: 480, resizeMode: 'outside' },
 	},
 	filename: function (og_filename, options) {
 		let timestamp = Date.now()
@@ -30,7 +30,7 @@ const storage = multer.diskStorage({
 			options.fileFormat
 		return newname
 	},
-}) */
+})
 
 let uploadContentImage = multer({ storage: storage })
 

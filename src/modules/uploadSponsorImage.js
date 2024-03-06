@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
 	},
 	filename: function (req, file, cb) {
 		let timestamp = Date.now()
-		cb(null, timestamp + '-sponsor-' + file.originalname)
+		cb(null, timestamp + '-sponsor750x125-' + file.originalname)
 	},
 })
 /* const storage = SharpMulter({
