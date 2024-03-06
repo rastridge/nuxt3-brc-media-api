@@ -1,9 +1,6 @@
 const fs = require('fs')
-const MEDIA_SITE_URL = 'https://media.buffalorugby.org/'
-const path = require('path')
-// const request = require('request')
-
-const activityLog = require('../helpers/activity-log')
+// const path = require('path')
+const { MEDIA_SITE_URL } = require('../../config.js')
 
 module.exports = {
 	// addImage,

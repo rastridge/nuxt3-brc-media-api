@@ -1,4 +1,4 @@
-const { MEDIA_SITE_URL, IMAGE_PATH } = require('../../config')
+const { MEDIA_SITE_URL, IMAGE_PATH } = require('../../config.js')
 const doDBQuery = require('../helpers/do-query')
 // const path = require('path')
 const fs = require('fs')
@@ -257,7 +257,7 @@ async function makeLabels({ labelType, member_type_id }) {
 
 	await doc.end()
 
-	return `${MEDIA_SITE_URL}/templabels/avery${labelType}.pdf`
+	return `${MEDIA_SITE_URL}templabels/avery${labelType}.pdf`
 }
 
 async function makeReturnLabels() {
@@ -312,5 +312,5 @@ async function makeReturnLabels() {
 	doc.pipe(fs.createWriteStream(`${IMAGE_PATH}/templabels/avery5160.pdf`))
 
 	await doc.end()
-	return `${MEDIA_SITE_URL}/templabels/avery5160.pdf`
+	return `${MEDIA_SITE_URL}templabels/avery5160.pdf`
 }

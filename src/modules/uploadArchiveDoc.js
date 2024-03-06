@@ -1,21 +1,8 @@
 const multer = require('multer')
 
-const { ARCHIVES_PATH, IMAGE_PATH } = require('../../config')
+const { ARCHIVES_PATH, IMAGE_PATH } = require('../../config.js')
 
 const storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(
-			null,
-			`/home/rastridge/media.buffalorugby.org/public/xoda/files/archives/'`
-		)
-	},
-	filename: function (req, file, cb) {
-		let timestamp = Date.now()
-		cb(null, timestamp + '-document-' + file.originalname)
-	},
-})
-
-/* const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, `${IMAGE_PATH}${ARCHIVES_PATH}`)
 	},
@@ -23,7 +10,7 @@ const storage = multer.diskStorage({
 		let timestamp = Date.now()
 		cb(null, timestamp + '-document-' + file.originalname)
 	},
-}) */
+})
 
 let uploadArchiveDoc = multer({ storage: storage })
 

@@ -1,5 +1,10 @@
 const mysql = require('mysql2/promise')
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = require('../../config')
+const {
+	DB_HOST,
+	DB_USER,
+	DB_PASSWORD,
+	DB_DATABASE,
+} = require('../../config.js')
 
 const activityLog = require('./activity-log')
 

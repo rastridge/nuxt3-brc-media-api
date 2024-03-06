@@ -1,11 +1,8 @@
 const multer = require('multer')
 const SharpMulter = require('sharp-multer')
-const { WOF_PATH, IMAGE_PATH } = require('../../config')
+const { WOF_PATH, IMAGE_PATH } = require('../../config.js')
 
-// const activityLog = require('../helpers/activity-log')
-// activityLog('uploads', 'IN uploadwofimage = ', 'got here ok2')
-
-/* const storage = multer.diskStorage({
+const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, `${IMAGE_PATH}${WOF_PATH}`)
 	},
@@ -13,9 +10,9 @@ const { WOF_PATH, IMAGE_PATH } = require('../../config')
 		let timestamp = Date.now()
 		cb(null, timestamp + '-WOF-' + file.originalname)
 	},
-}) */
+})
 
-const storage = SharpMulter({
+/* const storage = SharpMulter({
 	destination: (req, file, callback) =>
 		callback(null, `${IMAGE_PATH}${WOF_PATH}`),
 	imageOptions: {
@@ -33,7 +30,7 @@ const storage = SharpMulter({
 			options.fileFormat
 		return newname
 	},
-})
+}) */
 
 let uploadContentImage = multer({ storage: storage })
 

@@ -1,17 +1,16 @@
 const multer = require('multer')
-const SharpMulter = require('sharp-multer')
-const { NEWS_PATH, IMAGE_PATH } = require('../../config')
-const activityLog = require('../helpers/activity-log')
+// const SharpMulter = require('sharp-multer')
+const { NEWS_PATH, IMAGE_PATH } = require('../../config.js')
 
-/* const storage = multer.diskStorage({
+const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, `${IMAGE_PATH}${NEWS_PATH}`)
 	},
 	filename: function (req, file, cb) {
 		let timestamp = Date.now()
-		cb(null, timestamp + '-newsletter-' + file.originalname)
+		cb(null, timestamp + '-content-' + file.originalname)
 	},
-}) */
+})
 
 /* const newFilename = (og_filename, options) => {
 	const newname =
@@ -22,7 +21,7 @@ const activityLog = require('../helpers/activity-log')
 	return newname
 } */
 
-const storage = SharpMulter({
+/* const storage = SharpMulter({
 	destination: (req, file, callback) =>
 		callback(null, `${IMAGE_PATH}${NEWS_PATH}`),
 	imageOptions: {
@@ -40,7 +39,7 @@ const storage = SharpMulter({
 			options.fileFormat
 		return newname
 	},
-})
+}) */
 
 let uploadNewsletterImage = multer({ storage: storage })
 
