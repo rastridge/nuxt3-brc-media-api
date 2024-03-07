@@ -13,6 +13,14 @@ module.exports = {
 	addClubhouseImage,
 }
 
+async function addNewsImage(file) {
+	return {
+		// imageUrl: MEDIA_SITE_URL + '_img/_news_newsletters/' + file.filename,
+		imageUrl: `${MEDIA_SITE_URL}_img/_news_newsletters/${file.filename}`,
+		// imageUrl: `https://media.buffalorugby.org/_img/_news_newsletters/${file.filename}`,
+	}
+}
+
 async function addClubhouseImage(file) {
 	return {
 		imageUrl: MEDIA_SITE_URL + '_all_imgs/clubhouse/' + file.filename,
@@ -25,12 +33,6 @@ async function addWOFImage(file) {
 }
 
 async function addNewsletterImage(file) {
-	return {
-		imageUrl: MEDIA_SITE_URL + '_img/_news_newsletters/' + file.filename,
-	}
-}
-
-async function addNewsImage(file) {
 	return {
 		imageUrl: MEDIA_SITE_URL + '_img/_news_newsletters/' + file.filename,
 	}

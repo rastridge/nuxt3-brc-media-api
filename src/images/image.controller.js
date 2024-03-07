@@ -32,6 +32,15 @@ module.exports = router
 		.catch((err) => next(err))
 } */
 
+function addNewsImage(req, res, next) {
+	imageService
+		.addNewsImage(req.file)
+		.then((result) => {
+			return res.json(result)
+		})
+		.catch((err) => next(err))
+}
+
 function addNewsletterImage(req, res, next) {
 	/* 	activityLog(
 		'uploads',
@@ -121,27 +130,6 @@ function addContentImage(req, res, next) {
 	imageService
 		.addContentImage(req.file)
 		.then((result) => res.json(result))
-		.catch((err) => next(err))
-}
-
-function addNewsImage(req, res, next) {
-	/* 	activityLog(
-		'uploads',
-		'IN imageService.addNewsImage controller result.imageUrl = ',
-		'got here'
-	) */
-
-	imageService
-		.addNewsImage(req.file)
-		.then((result) => {
-			/* 			activityLog(
-				'uploads',
-				'IN imageService.addNewsImage controller result.imageUrl = ',
-				res.json(result)
-			) */
-
-			return res.json(result)
-		})
 		.catch((err) => next(err))
 }
 

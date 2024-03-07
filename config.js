@@ -5,7 +5,6 @@ module.exports = {
 	// website
 	SITE_URL: process.env.SITE_URL,
 	SITE_DIR: process.env.SITE_DIR,
-
 	// mysql DB
 	DB_HOST: process.env.DB_HOST,
 	DB_USER: process.env.DB_USER,
