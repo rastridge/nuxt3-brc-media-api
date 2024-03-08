@@ -33,6 +33,9 @@ module.exports = router
 } */
 
 function addNewsImage(req, res, next) {
+	const { DB_HOST } = require('../../config')
+	const activityLog = require('../../src/helpers/activity-log.js')
+	activityLog('Testing', 'IN addNewsImage DB_HOST= ', DB_HOST)
 	imageService
 		.addNewsImage(req.file)
 		.then((result) => {

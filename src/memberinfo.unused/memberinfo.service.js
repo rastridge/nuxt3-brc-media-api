@@ -1,10 +1,9 @@
 const { MEDIA_SITE_URL, IMAGE_PATH } = require('../../config.js')
-const doDBQuery = require('../helpers/do-query')
+const doDBQuery = require('../helpers/do-query.js.unused')
 // const path = require('path')
 const fs = require('fs')
 const pdf = require('pdfjs')
 const fonts = require('pdfjs/font/Helvetica')
-const activityLog = require('../helpers/activity-log')
 
 module.exports = {
 	getAll,
@@ -13,6 +12,13 @@ module.exports = {
 }
 
 async function getAll() {
+	const activityLog = require('../helpers/activity-log.js')
+	activityLog(
+		'service',
+		'IN memberinfo service getAll MEDIA_SITE_URL = ',
+		MEDIA_SITE_URL
+	)
+
 	const sql = `SELECT
 					a.account_id,
 					concat(a.member_lastname,", ",a.member_firstname) as name,
@@ -46,11 +52,12 @@ async function getAll() {
 				ORDER BY
 					name ASC`
 
-	accounts = await doDBQuery(sql)
+	const accounts = await doDBQuery(sql)
 	return accounts
 }
 
 async function makeLabels({ labelType, member_type_id }) {
+	const activityLog = require('../helpers/activity-log.js')
 	activityLog(
 		'Labels',
 		'IN makeLabels service labelType, member_type_id = ',

@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const activityLog = require('../helpers/activity-log')
 const bodyparser = require('body-parser')
-
 const memberinfoService = require('./memberinfo.service')
 
+const activityLog = require('../helpers/activity-log')
+activityLog('controller', 'IN memberinfo controller  = ', ' ')
 ////////////// ROUTES //////////////////////
 router.get('/', getAll)
 router.post('/makelabels', bodyparser.json(), makeLabels)

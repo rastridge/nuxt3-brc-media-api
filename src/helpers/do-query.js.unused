@@ -6,13 +6,11 @@ const {
 	DB_DATABASE,
 } = require('../../config.js')
 
-const activityLog = require('./activity-log')
+const activityLog = require('./activity-log.js')
 
 module.exports = doDBQuery
 
 async function doDBQuery(sql, inserts) {
-	activityLog('Labels', 'IN doDBQuery DB_HOST= ', DB_HOST)
-
 	const conn1 = await mysql.createConnection({
 		host: DB_HOST,
 		user: DB_USER,
@@ -25,11 +23,8 @@ async function doDBQuery(sql, inserts) {
 	}
 	activityLog(
 		'Labels',
-		'IN doDBQuery DB= ',
-		DB_HOST,
-		DB_USER,
-		DB_PASSWORD,
-		DB_DATABASE
+		'IN doDBQuery DB_HOST DB_USER DB_PASSWORD DB_DATABASE = ',
+		DB_HOST + ' ' + DB_USER + ' ' + DB_PASSWORD + ' ' + DB_DATABASE
 	)
 
 	const [rows, fields] = await conn1.execute(sql)

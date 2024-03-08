@@ -1,6 +1,6 @@
 const fs = require('fs')
 // const path = require('path')
-const { MEDIA_SITE_URL } = require('../../config.js')
+const { MEDIA_SITE_URL } = require('../../config')
 console.log(MEDIA_SITE_URL)
 
 module.exports = {
@@ -14,6 +14,8 @@ module.exports = {
 }
 
 async function addNewsImage(file) {
+	const activityLog = require('../../src/helpers/activity-log')
+	activityLog('Testing', 'IN addNewsImage MEDIA_SITE_URL= ', MEDIA_SITE_URL)
 	return {
 		// imageUrl: MEDIA_SITE_URL + '_img/_news_newsletters/' + file.filename,
 		imageUrl: `${MEDIA_SITE_URL}_img/_news_newsletters/${file.filename}`,
