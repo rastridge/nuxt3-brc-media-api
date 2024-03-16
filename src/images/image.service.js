@@ -14,12 +14,10 @@ module.exports = {
 }
 
 async function addNewsImage(file) {
-	const activityLog = require('../../src/helpers/activity-log')
-	activityLog('Testing', 'IN addNewsImage MEDIA_SITE_URL= ', MEDIA_SITE_URL)
+	// const activityLog = require('../../src/helpers/activity-log')
+	// activityLog('Testing', 'IN addNewsImage MEDIA_SITE_URL= ', MEDIA_SITE_URL)
 	return {
-		// imageUrl: MEDIA_SITE_URL + '_img/_news_newsletters/' + file.filename,
 		imageUrl: `${MEDIA_SITE_URL}_img/_news_newsletters/${file.filename}`,
-		// imageUrl: `https://media.buffalorugby.org/_img/_news_newsletters/${file.filename}`,
 	}
 }
 
