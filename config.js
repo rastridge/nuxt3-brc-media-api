@@ -12,6 +12,7 @@ module.exports = {
 	DB_DATABASE: process.env.DB_DATABASE,
 	// images
 	MEDIA_SITE_URL: process.env.MEDIA_SITE_URL,
+	MEDIA_PORT: process.env.MEDIA_PORT,
 	IMAGE_PATH: process.env.IMAGE_PATH,
 	// specific
 	NEWS_PATH: process.env.MEDIA_SITE_URL,

@@ -1,7 +1,6 @@
 const fs = require('fs')
 // const path = require('path')
 const { MEDIA_SITE_URL } = require('../../config')
-console.log(MEDIA_SITE_URL)
 
 module.exports = {
 	addNewsletterImage,
