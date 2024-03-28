@@ -18,13 +18,13 @@ const storage = SharpMulter({
 	imageOptions: {
 		fileFormat: 'png',
 		quality: 80,
-		resize: { width: 480, resizeMode: 'outside' },
+		resize: { width: 960, resizeMode: 'outside' },
 	},
 	filename: function (og_filename, options) {
 		let timestamp = Date.now()
 		const newname =
 			timestamp +
-			'-clubhouse480-' +
+			'-clubhouse960-' +
 			og_filename.split('.').slice(0, -1).join('.') +
 			'.' +
 			options.fileFormat
