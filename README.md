@@ -1,4 +1,4 @@
-# Media API for thebuffalorugby.club
+# Media API for buffalorugby.org
 
 File uploads based on
 
@@ -58,18 +58,18 @@ cd /home/rastridge/media.buffalorugby.org
 pm2 restart ecosystem.config.js
 ```
 
-## Experimental Using media.thebuffalorugby.club
+## Using media.buffalorugby.org
 
-Uses Netlify DNS - A record points to domain media.thebuffalorugby.club
+Uses Netlify DNS - A record points to domain media.buffalorugby.org
 
-Upload server code from media.buffalorugby.org to media.thebuffalorugby.club
-app.js starts on port 9006 - do not update, update node_modules with npm install
-
-```
-rsync -av --dry-run --delete --exclude "ecosystem.config.js" --exclude "app.js"  --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.thebuffalorugby.club/
-```
+Upload server code from media.buffalorugby.org to media.buffalorugby.org
+app.js starts on port 9006 - do NOT update, update node_modules with npm install
 
 ```
-rsync -av --delete --exclude "ecosystem.config.js" --exclude "app.js"  --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/Code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.thebuffalorugby.club/
+rsync -av --dry-run --delete --exclude "ecosystem.config.js" --exclude "app.js"  --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
+```
+
+```
+rsync -av --delete --exclude "ecosystem.config.js" --exclude "app.js"  --exclude "/node_modules" --exclude ".git" --exclude ".gitignore" ~/Code/experiments-nuxt3/nuxt3-brc-media-api/ rastridge@buffalorugby.org:/home/rastridge/media.buffalorugby.org/
 
 ```
